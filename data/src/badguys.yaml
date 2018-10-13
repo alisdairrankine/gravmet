@@ -1,0 +1,29 @@
+version: gravmet/1.0
+type: team
+name: badguys
+metadata:
+  colour: red
+buildings:
+  - name: command_station
+    cost: 100
+    power: 20
+    health: 1000
+  - name: shipyard
+    cost: 10
+    power: -10
+    health: 200
+    requires:
+      - command_station
+  - name: crypto_station
+    cost: 50
+    power: -10
+    health: 400
+    requires:
+      - command_station
+units:
+  - name: fighter
+    cost: 1
+    health: 5
+    requires:
+     - shipyard
+    home: shipyard

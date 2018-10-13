@@ -16,7 +16,7 @@ func NewTileMap(w, h uint) *TileMap {
 	entities := make([]Tile, w*h)
 
 	return &TileMap{
-		tileDimension: 4,
+		tileDimension: 16,
 		width:         w,
 		height:        h,
 		terrain:       terrain,

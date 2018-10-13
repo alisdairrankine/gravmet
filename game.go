@@ -61,7 +61,7 @@ func (g *Game) Run() {
 	showFPS := false
 	for {
 		t = time.Now()
-		surface.FillRect(nil, 0)
+		surface.FillRect(nil, white.Uint32())
 		g.r.Render(surface)
 
 		if showFPS {
@@ -81,9 +81,9 @@ func (g *Game) Run() {
 			}
 		}
 		dt = time.Now().Sub(t)
-		// if dt.Nanoseconds() < 16666666 {
-		// 	time.Sleep(time.Duration((16666666 - dt.Nanoseconds())) * time.Nanosecond)
-		// }
+		if dt.Nanoseconds() < 16666666 {
+			time.Sleep(time.Duration((16666666 - dt.Nanoseconds())) * time.Nanosecond)
+		}
 
 	}
 }
